@@ -1,0 +1,44 @@
+.send-message{
+    width: 50%;
+    float: left;
+
+    .header{
+        width: 70%;
+        display: flex;
+        gap: 30px;
+        justify-content: flex-start;
+        align-items: center;
+
+        .fontIcon-box{
+            padding: 10px;
+            border-radius: 100%;
+            background-color: #B6E5DC;
+
+            .icon{
+                font-size: 26px;
+            }
+        }
+
+        .title{
+            font-size: 27px;
+            font-weight: 600;
+        }
+    }
+
+    .box{
+        height: 130px;
+        margin: 35px 10px 10px 20px;
+        border: 1px solid #ccc;
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+
+        
+    }
+    .send-button{
+        cursor: pointer;
+    }
+}

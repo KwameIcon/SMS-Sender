@@ -1,0 +1,55 @@
+.message-template{
+    width: 85%;
+    padding: 10px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+
+    .phone-like-container{
+        .icon{
+            font-size: 15px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px 5px;
+            color: #074936;
+        }
+    }
+
+    .text{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        justify-content: center;
+        align-items: center;
+
+        .title{
+            font-size: 20px;
+            color: #074936;
+        }
+
+        .template-button{
+            width: 40px;
+            height: 4px;
+            padding: 10px;
+            background-color: #F57442;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            &:hover .icon{
+                color: #fff;
+            }
+
+            .icon{
+                color: #fff;
+                font-size: 16px;
+                transition: color 0.3 ease;
+            }
+
+            
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.message-hub{
+    width: 45%;
+    float: right;
+
+    .header{
+        width: 70%;
+        margin: 0 0 25px 0;
+        display: flex;
+        gap: 30px;
+        justify-content: flex-start;
+        align-items: center;
+
+        .fontIcon{
+            padding: 10px;
+            border-radius: 100%;
+            background-color: #B6E5DC;
+
+            .icon{
+                font-size: 30px;
+            }
+        }
+
+        .title{
+            font-size: 27px;
+            font-weight: 600;
+        }
+    }
+
+    .content{
+        width: 100%;
+        margin-left: 20px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+
+        .box{
+            width: 40%;
+            // background-color: #074936;
+        }
+    }
+
+
+}

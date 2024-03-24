@@ -1,0 +1,27 @@
+.help-button{
+    position: fixed;
+    bottom: 10px;
+    right: 0;
+    width: 70px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+
+    &:hover{
+        background-color: #09946d;
+        box-shadow: rgba(255, 147, 0, 0.2) 0px 7px 29px 0px;
+    }
+
+    .icon{
+        font-size: 25px;
+    }
+    .text{
+        font-size: 20px;
+    }
+}

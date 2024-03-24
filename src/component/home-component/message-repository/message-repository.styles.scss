@@ -1,0 +1,67 @@
+.message-repository{
+    margin-top: -250px;
+    width: 45%;
+    float: right;
+
+    .header{
+        width: 70%;
+        margin: 0 0 25px 0;
+        display: flex;
+        gap: 30px;
+        justify-content: flex-start;
+        align-items: center;
+
+        .fontIcon{
+            padding: 10px;
+            border-radius: 100%;
+            background-color: #B6E5DC;
+
+            .icon{
+                font-size: 30px;
+            }
+        }
+
+        .title{
+            font-size: 27px;
+            font-weight: 600;
+        }
+    }
+
+    .content{
+        width: 100%;
+        margin: 20px;
+        margin-top: 40px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+
+        .buttons{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .active{
+                border-color: #F57442;
+            }
+        }
+
+        button{
+            border: none;
+            background-color: #fff;
+            color: #074936;
+            font-weight: 800;
+            text-transform: uppercase;
+            border: 1px solid #074936;
+            border-radius: 20px;
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: color 0.3s ease;
+        }
+        button:hover{
+            border-color: #F57442;
+        }
+    }
+
+
+}

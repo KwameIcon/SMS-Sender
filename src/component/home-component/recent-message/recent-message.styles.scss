@@ -1,0 +1,75 @@
+.recent-messages{
+    width: 50%;
+    margin-top: 400px;
+
+
+    .header{
+        width: 70%;
+        margin: 0 0 25px 0;
+        display: flex;
+        gap: 30px;
+        justify-content: flex-start;
+        align-items: center;
+    
+        .fontIcon{
+            padding: 10px;
+            border-radius: 100%;
+            background-color: #B6E5DC;
+    
+            .icon{
+                font-size: 30px;
+            }
+        }
+    
+        .title{
+            font-size: 27px;
+            font-weight: 600;
+        }
+    }
+
+    .actions{
+        width: 50%;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 4px solid #ccc;
+    }
+
+    .received-button,
+    .sent-button{
+        width: 50%;
+        background: transparent;
+        color:  15px 10px;
+        color: #074936;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-radius: 0;
+        box-shadow: 0;
+    }
+
+    .received-button{
+        margin-bottom: -4px;
+        border-bottom: 4px solid #F57442;
+    }
+
+    .messages-box{
+        // height: 130px;
+        padding: 20px;
+        margin: 35px 10px 10px 20px;
+        border: 1px solid #ccc;
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+
+        .stateText{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+}

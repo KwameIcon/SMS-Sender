@@ -1,0 +1,33 @@
+.phone-like-container{
+    position: relative;
+    width: 8px;
+    height: 25px;
+    padding:  25px 15px;
+    border-radius: 15px;
+    background-color: #074936;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+
+    &::before{
+        position: absolute;
+        content: '';
+        right: -2px;
+        top: 20px;
+        width: 5px;
+        height: 10px;
+        background-color: #074936;
+    }
+    &::after{
+        position: absolute;
+        content: '';
+        right: -2px;
+        top: 35px;
+        width: 5px;
+        height: 10px;
+        background-color: #074936;
+    }
+
+    
+}

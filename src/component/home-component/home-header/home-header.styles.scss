@@ -1,0 +1,30 @@
+.home-container{
+    margin: 50px 20px 50px 100px;
+    overflow: hidden;
+
+    .header{
+        width: 90%;
+        padding: 0px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #1A4539;
+
+        div{
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+
+            .header-icon{
+                font-size: 35px;
+                transform: rotate(45deg);
+                transition: transform 1s ease-in-out;
+            }
+            .header-icon:hover{
+                transform: rotate(0);
+                cursor: pointer;
+            }
+        }
+    }
+}
