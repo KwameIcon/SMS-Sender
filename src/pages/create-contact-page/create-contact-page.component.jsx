@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./create-contact-page.styles.scss";
 
@@ -14,7 +14,6 @@ const CreateContactPage = () => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [info, setInfo] = useState("");
-  const [message, setMessage] = useState("");
   const [isFormSuccess, setIsFormSuccess] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
@@ -50,14 +49,50 @@ const CreateContactPage = () => {
       setIsFormSubmitted(true);
       setIsFormSuccess(false);
     } else {
+      const currentDate = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
+  
+      const newContact = {
+        fName,
+        mName,
+        lName,
+        email,
+        number,
+        info,
+        currentDate,
+      };
+  
+      const storedData = JSON.parse(localStorage.getItem('contactData'));
+      const updatedData = storedData ? [...storedData, newContact] : [newContact];
+      
+      localStorage.setItem('contactData', JSON.stringify(updatedData));
       setIsFormSubmitted(true);
       setIsFormSuccess(true);
+  
+      setfName('')
+      setmName('')
+      setlName('')
+      setEmail('')
+      setNumber('')
+      setInfo('')
     }
   };
 
+  useEffect(() => {
+    if (isFormSubmitted) {
+      const timeout = setTimeout(() => {
+        setIsFormSubmitted(false);
+      }, 3000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [isFormSubmitted]);
+
 
   const messageClass = `message ${isFormSubmitted ? 'visible' : 'hidden'}`;
-  const messageSuccess = {backgroundColor: isFormSuccess ? '#074936;' : '#ffffff', color: isFormSuccess ? '#ffffff' : 'crimson'};
+  const messageSuccess = {
+    backgroundColor: isFormSuccess ? '#074936' : '#ffffff',
+    color: isFormSuccess ? '#ffffff' : 'crimson'
+  };
   
 
   return (
@@ -67,7 +102,9 @@ const CreateContactPage = () => {
           Start building your network. Add a new contact today!
         </h1>
 
-        <MessagePrompt style={messageSuccess} className= {messageClass}>{isFormSuccess ? 'Form submitted successfully!' : 'Hey! there, make sure you fill in all required fields!'}</MessagePrompt>
+        <MessagePrompt style={messageSuccess} className={messageClass}>
+          {isFormSuccess ? 'Form submitted successfully!' : 'Hey! there, make sure you fill in all required fields!'}
+        </MessagePrompt>
 
         <div className="wrapper">
           <div className="contact-fName">

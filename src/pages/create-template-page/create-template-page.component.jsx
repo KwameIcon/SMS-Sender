@@ -59,37 +59,25 @@ const CreateTemplatePage = () => {
 
   const handleFormSubmission = (ev) => {
       ev.preventDefault();
-      if (selectedContacts.length === 0) {
-        alert('Please select at least one recipient.');
+      if(!selectedContacts || !message || !templateName){
+        alert('Please fill all fields!');
         return;
       }
 
-      if (message === '') {
-        alert('Please enter a message.');
-        return;
-      }
-
-      if (templateName === '') {
-        alert('Please enter a template name.');
-        return;
-      }
-
-      const formData = {
+      const currentDate = new Date().toLocaleDateString('en-GB', {day: '2-digit', month: '2-digit', year: 'numeric'}).replace(/\//g, '/');
+      const newTemplate = {
         userName,
         selectedContacts,
         templateName,
         message,
+        currentDate,
       };
 
-      localStorage.setItem('formData', JSON.stringify(formData));
+      const storedData = JSON.parse(localStorage.getItem('templateData'));
+      const updatedData = storedData ? [...storedData, newTemplate] : [newTemplate]
+      localStorage.setItem('templateData', JSON.stringify(updatedData));
 
       alert('Form submitted successfully!');
-
-      const storedFormData = JSON.parse(localStorage.getItem('formData'));
-      alert(storedFormData?.userName);
-      alert(storedFormData?.selectedContacts);
-      alert(storedFormData?.templateName);
-      alert(storedFormData?.message);
 
       setSelectedContacts([]);
       setMessage('');

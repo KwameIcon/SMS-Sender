@@ -1,0 +1,224 @@
+.view-contact-container{
+
+   .header-element{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .new-contact-button{
+            padding: 5px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+
+        .search-field{
+            height: 40px;
+            font-size: 20px;
+            border-color: var(--auxiliary-color);
+            color: var(--secondary-color);
+        }
+
+        .num-of-contacts{
+            font-size: 20px;
+            color: var(--auxiliary-color);
+            font-weight: 800;
+            display: flex;
+            gap: 20px;
+
+            .value{
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                background-color: var(--secondary-color);
+            }
+        }
+    }
+
+    .contact-content-container{
+        width: 80%;
+        padding: 20px;
+        margin: 70px auto;
+        text-align: center;
+
+        .contact-headers {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        
+        .contact-headers .name {
+            flex: 1;
+            font-size: 20px;
+            margin: 0;
+            color: var(--secondary-color);
+            font-weight: 800;
+        }
+
+        .content{
+            width: 100%;
+            min-height: 50px;
+            background-color: #fff;
+            margin: 20px 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+
+            .name{
+                flex: 1;
+                font-size: 17px;
+                color: var(--secondary-color);
+
+                &.action{
+                    display: flex;
+                    gap: 20px;
+                    justify-content: center;
+                    align-items: center;
+
+                    .delete{
+                        position: relative;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 100%;
+                        color:  rgb(153, 2, 2);
+                        border: 1px solid red;
+                        cursor: pointer;
+                        transition: 0.3s ease;
+
+                        &:hover{
+                            color: rgb(226, 2, 2);
+                            border-color: rgb(121, 1, 1);
+                        }
+                        &:hover:before{
+                            position: absolute;
+                            content: 'Delete this contact';
+                            width: 150px;
+                            right: 18px;
+                            top: -10px;
+                            color: crimson;
+                        }
+
+                    }
+
+                    .edit{
+                        position: relative;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 100%;
+                        color:  var(--secondary-color);
+                        border: 1px solid var(--secondary-color);
+                        cursor: pointer;
+                        transition: 0.3s ease;
+
+                        &:hover{
+                            color: green;
+                        }
+                        &:hover:before{
+                            position: absolute;
+                            content: 'Edit this contact';
+                            width: 150px;
+                            left: 18px;
+                            top: -10px;
+                            color: var(--secondary-color);
+                        }
+                    }
+                }
+            }
+
+            
+        }
+        
+        
+    }
+
+    .edit-section{
+        position: absolute;
+        top: 200px;
+        left: 40%;
+        padding: 20px;
+        width: 35%;
+        background-color: #fff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        h3{
+            font-size: 30px;
+        }
+
+        .edit-form{
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            align-items: first baseline;
+            font-size: 18px;
+
+            .form-group{
+                width: 100%;
+                display: flex;
+                gap: 20px;
+
+                label{
+                    font-size: 25px;
+                }
+
+                select{
+                    width: 71%;
+                    margin-left: -8px;
+                    font-size: 20px;
+                    border-radius: 5px;
+                    background-color: var(--primary-color);
+                    border: none;
+                    outline: none;
+                    border: 1px solid var(--secondary-color);
+                }
+
+                input{
+                    width: 70%;
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    border: 1px solid var(--secondary-color);
+                    background-color: var(--primary-color);
+                }
+            }
+
+            .actions{
+                width: 80%;
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                button{
+                    width: 100px;
+                    height: 30px;
+                    border-radius: 30px;
+                    border: none;
+                    outline: none;
+                    border: 1px solid var(--secondary-color);
+                    color: #fff;
+                    background-color: var(--secondary-color);
+                    cursor: pointer;
+
+                    &:first-child{
+                        background-color: var(--auxiliary-color);
+                    }
+                }
+            }
+            
+        }
+    }
+    
+
+}

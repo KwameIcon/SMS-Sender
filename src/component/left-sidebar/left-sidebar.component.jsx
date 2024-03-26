@@ -34,7 +34,7 @@ const LeftSidebar = () => (
                     </Link>
                 </li>
                 <li>
-                    <Link to={'/dashboard/send-message'} className="home">
+                    <Link to={'/dashboard/view-contact'} className="home">
                         <FontAwesomeIcon icon={faAddressBook} className="icon"/>
                         <span className="text">View Contacts</span>
                     </Link>
@@ -52,7 +52,7 @@ const LeftSidebar = () => (
                     </Link>
                 </li>
                 <li>
-                    <Link to={'/'} className="home">
+                    <Link to={'/dashboard/template-log'} className="home">
                         <FontAwesomeIcon icon={faFolderOpen} className="icon"/>
                         <span className="text"> View Templates</span>
                     </Link>
