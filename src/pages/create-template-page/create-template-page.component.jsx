@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './send-message-page.styles.scss';
+
+import './create-template-page.styles.scss';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 import ContentContainer from '../../component/content-container/content-container.component';
@@ -7,13 +9,14 @@ import Textarea from '../../component/textarea/textarea.component';
 import Button from '../../component/button-component/buton.component';
 import USER_DATA from '../../component/user-data/user-data';
 import SendButton from '../../component/send-button/send-button.component';
+import InputField from '../../component/input-field/input-field.component';
 
-const SendMessagePage = () => {
-
+const CreateTemplatePage = () => {
   const [selectedContacts, setSelectedContacts] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
   const [message, setMessage] = useState('');
+  const [templateName, setTemplateName] = useState('');
 
   useEffect(() => {
     const currentUser = USER_DATA.find((user) => user.id === 5);
@@ -33,6 +36,16 @@ const SendMessagePage = () => {
 
   const handleContactRemove = (contact) => {
     setSelectedContacts((prevSelectedContacts) => prevSelectedContacts.filter((c) => c !== contact));
+  };
+
+  const handleTemplateName = (event) => {
+    let newTemplateName = event.target.value;
+    newTemplateName = newTemplateName.replace(/[^\w\s]/gi, '');
+    if (newTemplateName.length > 100) {
+      alert("Hey! Your template name can't exceed 100 characters")
+      newTemplateName = newTemplateName.substr(0, 100);
+    }
+    setTemplateName(newTemplateName);
   };
 
   const handleTextareaChange = (event) => {
@@ -56,9 +69,15 @@ const SendMessagePage = () => {
         return;
       }
 
+      if (templateName === '') {
+        alert('Please enter a template name.');
+        return;
+      }
+
       const formData = {
         userName,
         selectedContacts,
+        templateName,
         message,
       };
 
@@ -69,10 +88,12 @@ const SendMessagePage = () => {
       const storedFormData = JSON.parse(localStorage.getItem('formData'));
       alert(storedFormData?.userName);
       alert(storedFormData?.selectedContacts);
+      alert(storedFormData?.templateName);
       alert(storedFormData?.message);
 
       setSelectedContacts([]);
       setMessage('');
+      setTemplateName('');
   };
 
 
@@ -116,6 +137,11 @@ const SendMessagePage = () => {
             </div>
           </div>
 
+          <div className="template-name">
+            <span className="name">Template:</span>
+            <InputField value={templateName} handleInputValue={handleTemplateName} className="template-name-inputField" />
+          </div>
+
           <div className="textarea-container">
             <Textarea className="textarea" value={message} handleTextarea={handleTextareaChange} />
             <div className="actions">
@@ -133,4 +159,4 @@ const SendMessagePage = () => {
   )
 }
 
-export default SendMessagePage;
+export default CreateTemplatePage;

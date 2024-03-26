@@ -1,0 +1,94 @@
+.create-contact{
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    margin: 30px auto;
+    
+
+    .create-contact-header{
+        width: 100%;
+        font-size: 22px;
+        color: var(--secondary-color);
+        // -webkit-box-shadow: 0 4px 6px -6px #222;
+        // -moz-box-shadow: 0 4px 6px -6px #222;
+        // box-shadow: 0 4px 6px -6px #222;
+    }
+
+    .message{
+        position: fixed;
+        left: 40%;
+        min-width: 100px;
+        padding: 10px;
+        font-weight: 500;
+        text-transform: capitalize;
+        border-radius: 20px;
+        font-size: 20px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+        visibility: hidden;
+
+        &.visible{
+            visibility: visible;
+        }
+
+        &hidden{
+            visibility: hidden;
+        }
+    }
+
+    .wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        
+
+        .contact-fName,
+        .contact-mName,
+        .contact-lName,
+        .contact-email,
+        .contact-info,
+        .contact-number{
+            width: 58%;
+            margin: 30px 0;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+
+            
+
+            .fName,
+            .mName,
+            .lName,
+            .email,
+            .info,
+            .number{
+                font-size: 22px;
+                color: var(--secondary-color);
+                align-self: flex-start;
+            }
+
+            .inputField{
+                width: 550px;
+            }
+        }
+
+        .num{
+            letter-spacing: -0.09rem;
+        }
+
+        .action{
+            width: 60%;
+            // margin: auto;
+            display: flex;
+            justify-content: flex-end;
+
+            .button{
+                padding: 8px;
+                border-radius: 10px;
+                font-size: 20px;
+            }
+        }
+    }
+}

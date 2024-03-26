@@ -1,23 +1,33 @@
-import React from "react";
-import USER_DATA from "../user-data/user-data";
+import React, { useState, useEffect, createContext } from 'react';
 
-class AuthenticateUser extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoggedIn: false,
-    };
-  }
+const AuthContext = createContext();
 
-  componentDidMount() {
-    const currentUser = USER_DATA.find((user) => user.id === 5);
-    if (currentUser) {
-      this.setState({ isLoggedIn: true });
-    } else {
-      this.setState({ isLoggedIn: false });
-    }
-  }
+const Authentication = ({ children }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-}
+  // Check session storage on component mount
+  useEffect(() => {
+    const storedLoginStatus = sessionStorage.getItem('isLoggedIn');
+    setIsLoggedIn(storedLoginStatus === 'true');
+  }, []);
 
-export default AuthenticateUser;
+  // Simulated login function
+  const login = () => {
+    sessionStorage.setItem('isLoggedIn', 'true');
+    setIsLoggedIn(true);
+  };
+
+  // Simulated logout function
+  const logout = () => {
+    sessionStorage.setItem('isLoggedIn', 'false');
+    setIsLoggedIn(false);
+  };
+
+  return (
+    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export { Authentication, AuthContext };

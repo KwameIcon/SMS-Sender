@@ -3,7 +3,7 @@ import React from "react";
 import './left-sidebar.styles.scss'
 
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faHome, faUserPlus, faAddressBook, faFolderOpen, faPaperPlane, faHistory, faSave, faInbox, faFileAlt, faSignInAlt, faChartBar } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUserPlus, faAddressBook, faFolderOpen, faPaperPlane, faHistory, faSave, faSignInAlt, faChartBar } from '@fortawesome/free-solid-svg-icons';
 
 import {Link} from 'react-router-dom';
 
@@ -28,7 +28,7 @@ const LeftSidebar = () => (
                     </Link>
                 </li>
                 <li>
-                    <Link to={'/dashboard/send-message'} className="home">
+                    <Link to={'/dashboard/create-contact'} className="home">
                         <FontAwesomeIcon icon={faUserPlus} className="icon"/>
                         <span className="text">Create Contact</span>
                     </Link>
@@ -46,7 +46,7 @@ const LeftSidebar = () => (
                     </Link>
                 </li>
                 <li>
-                    <Link to={'/'} className="home">
+                    <Link to={'/dashboard/create-template'} className="home">
                         <FontAwesomeIcon icon={faSave} className="icon"/>
                         <span className="text">Create Template</span>
                     </Link>
